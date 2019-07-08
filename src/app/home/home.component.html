@@ -1,0 +1,36 @@
+<div class="wrapper">
+    <div class="page-header section-dark">
+        <div class="project-content">
+            <div class="project-content-left">
+                <i class="fas fa-paw"></i>
+                <h1 class="project-message">Salve um<br> bichinho</h1>
+            </div>
+            <div class="project-content-divider"></div>
+            <div class="project-content-right">
+                <div class="project-list">
+
+                    <!-- Data -->
+                    <div class="project-item" *ngFor="let data of dataSource$ | async" (click)="onItemClick(data)">
+                        <div class="project-item-left">
+                            <!--<i class="fas" [ngClass]="{'fa-dog': data.specie === 'dog', 'fa-cat': data.specie === 'cat', 'fa-paw': data.specie === 'other', 'pet-male': data.gender === 'male', 'pet-female': data.gender === 'female'}"></i>-->
+                            <img class="project-item-img" [src]="data.imageSrc">
+                        </div>
+                        <div class="project-item-right">
+                            <div class="project-item-right-header">
+                                <span class="project-item-title">{{data.title}}</span>
+                                <span class="project-item-description">{{data.description}}</span>
+                            </div>
+                            <div class="project-item-right-content">
+                                <div class="project-item-price-container">
+                                    <span class="project-item-price-label">Restam</span>
+                                    <span class="project-item-price">{{data.remaining > 0 ? 'R$ data.remaining' : 'SALVO'}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
